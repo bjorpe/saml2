@@ -13,7 +13,7 @@ class AttributeQueryTest extends \PHPUnit_Framework_TestCase
     {
         $attributeQuery = new AttributeQuery();
         $nameId = new XML\saml\NameID();
-        $nameId->value = 'NameIDValue';
+        $nameId->setValue('NameIDValue');
         $attributeQuery->setNameID($nameId);
         $attributeQuery->setAttributes(
             [
@@ -118,7 +118,7 @@ XML;
 
         $attributeQuery = new AttributeQuery();
         $nameId = new XML\saml\NameID();
-        $nameId->value = 'NameIDValue';
+        $nameId->setValue('NameIDValue');
         $attributeQuery->setNameID($nameId);
         $attributeQuery->setAttributes(
             [

@@ -1833,8 +1833,8 @@ XML;
         $assertion->setAuthnContextClassRef('someAuthnContext');
 
         $nameId = new XML\saml\NameID();
-        $nameId->value = "just_a_basic_identifier";
-        $nameId->Format = "urn:oasis:names:tc:SAML:2.0:nameid-format:transient";
+        $nameId->setValue("just_a_basic_identifier");
+        $nameId->setFormat("urn:oasis:names:tc:SAML:2.0:nameid-format:transient");
         $assertion->setNameId($nameId);
         $this->assertFalse($assertion->isNameIdEncrypted());
 
@@ -1911,8 +1911,8 @@ XML;
         $assertion->setSignatureKey(CertificatesMock::getPrivateKey());
 
         $nameId = new XML\saml\NameID();
-        $nameId->value = "just_a_basic_identifier";
-        $nameId->Format = "urn:oasis:names:tc:SAML:2.0:nameid-format:transient";
+        $nameId->setValue("just_a_basic_identifier");
+        $nameId->setFormat("urn:oasis:names:tc:SAML:2.0:nameid-format:transient");
         $assertion->setNameId($nameId);
         $assertion->setAuthnContextClassRef('someAuthnContext');
 

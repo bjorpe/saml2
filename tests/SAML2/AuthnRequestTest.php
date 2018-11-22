@@ -136,8 +136,8 @@ AUTHNREQUEST;
     {
         $request = new AuthnRequest();
         $nameId = new XML\saml\NameID();
-        $nameId->value = 'user@example.org';
-        $nameId->Format = Constants::NAMEID_UNSPECIFIED;
+        $nameId->setValue('user@example.org');
+        $nameId->setFormat(Constants::NAMEID_UNSPECIFIED);
         $request->setNameId($nameId);
 
         $requestAsXML = $request->toUnsignedXML()->ownerDocument->saveXML();
@@ -196,8 +196,8 @@ AUTHNREQUEST;
     {
         // the NameID we're going to encrypt
         $nameId = new XML\saml\NameID();
-        $nameId->value = md5('Arthur Dent');
-        $nameId->Format = Constants::NAMEID_ENCRYPTED;
+        $nameId->setValue(md5('Arthur Dent'));
+        $nameId->steFormat(Constants::NAMEID_ENCRYPTED);
 
         // the Issuer
         $issuer = new XML\saml\Issuer();

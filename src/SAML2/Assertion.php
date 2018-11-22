@@ -562,7 +562,7 @@ class Assertion implements SignedElement
                     /* Fall back for legacy IdPs sending string value (e.g. SSP < 1.15) */
                     Utils::getContainer()->getLogger()->warning(sprintf("Attribute %s (EPTI) value %d is not an XML NameId", $attributeName, $index));
                     $nameId = new XML\saml\NameID();
-                    $nameId->value = $eptiAttributeValue->textContent;
+                    $nameId->setValue($eptiAttributeValue->textContent);
                     $this->attributes[$attributeName][] = $nameId;
                 }
             }

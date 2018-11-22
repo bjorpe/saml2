@@ -49,7 +49,7 @@ XML;
     public function testMarshalling()
     {
         $nameId = new XML\saml\NameID();
-        $nameId->value = 'NameIDValue';
+        $nameId->setValue('NameIDValue');
 
         $logoutRequest = new LogoutRequest();
         $logoutRequest->setNameID($nameId);
@@ -69,7 +69,7 @@ XML;
         $this->assertEquals('SessionIndexValue', $sessionIndexElements[0]->textContent);
 
         $nameId = new XML\saml\NameID();
-        $nameId->value = 'NameIDValue';
+        $nameId->setValue('NameIDValue');
         $logoutRequest = new LogoutRequest();
         $logoutRequest->setNameID($nameId);
         $logoutRequest->setSessionIndexes(['SessionIndexValue1', 'SessionIndexValue2']);
@@ -102,7 +102,7 @@ XML;
     public function testEncryptedNameId()
     {
         $nameId = new XML\saml\NameID();
-        $nameId->value = 'NameIdValue';
+        $nameId->setValue('NameIdValue');
 
         $logoutRequest = new LogoutRequest();
         $logoutRequest->setNameID($nameId);
@@ -201,7 +201,7 @@ XML;
     public function testSetNotOnOrAfter()
     {
         $nameId = new XML\saml\NameID();
-        $nameId->value = 'NameIDValue';
+        $nameId->setValue('NameIDValue');
         $time = time();
 
         $logoutRequest = new LogoutRequest();

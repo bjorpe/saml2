@@ -17,11 +17,11 @@ class NameIDTest extends \PHPUnit_Framework_TestCase
     public function testMarshalling()
     {
         $nameId = new NameID();
-        $nameId->NameQualifier = 'TheNameQualifier';
-        $nameId->SPNameQualifier = 'TheSPNameQualifier';
-        $nameId->Format = 'TheFormat';
-        $nameId->SPProvidedID = 'TheSPProvidedID';
-        $nameId->value = 'TheNameIDValue';
+        $nameId->setNameQualifier('TheNameQualifier');
+        $nameId->setSPNameQualifier('TheSPNameQualifier');
+        $nameId->setFormat('TheFormat');
+        $nameId->setSPProvidedID('TheSPProvidedID');
+        $nameId->setValue('TheNameIDValue');
         $nameIdElement = $nameId->toXML();
 
         $nameIdElements = Utils::xpQuery($nameIdElement, '/saml_assertion:NameID');
@@ -54,11 +54,11 @@ XML
     public function testToString()
     {
         $nameId = new NameID();
-        $nameId->NameQualifier = 'TheNameQualifier';
-        $nameId->SPNameQualifier = 'TheSPNameQualifier';
-        $nameId->Format = 'TheFormat';
-        $nameId->SPProvidedID = 'TheSPProvidedID';
-        $nameId->value = 'TheNameIDValue';
+        $nameId->setNameQualifier('TheNameQualifier');
+        $nameId->setSPNameQualifier('TheSPNameQualifier');
+        $nameId->setFormat('TheFormat');
+        $nameId->setSPProvidedID('TheSPProvidedID');
+        $nameId->setValue('TheNameIDValue');
 
         $output = '<saml:NameID xmlns:saml="'.\SAML2\Constants::NS_SAML.'" NameQualifier="TheNameQualifier" '.
                   'SPNameQualifier="TheSPNameQualifier" Format="TheFormat" SPProvidedID="TheSPProvidedID">'.
